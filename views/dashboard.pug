@@ -1,0 +1,70 @@
+extends layout
+
+block content
+    main.login-main
+        if user
+
+            div(class='dashboard-intro-message')
+                p Welcome to your dashboard #{user.firstname} #{user.lastname}. 
+                if user.isAdmin != true
+                    p You are a basic user and not an admin.
+                else
+                    p You are an admin. You can create and update rooms.  
+
+
+
+            if user.isAdmin == true
+                div.new-admin-update
+                    form(method='POST', action='/rooms/add' class='admin-update-form new-admin-update' enctype="multipart/form-data")
+                        p Add a Room:
+                        #form-group
+                            label(for='title' class='label-for-book-host') Room By: #{user.firstname} #{user.lastname} 
+                            input.form-control(name='adminsemail', type="hidden" value=user.email)
+                        #form-group
+                            label(for='title') Title:
+                            input.form-control(name='title', type='text')
+
+                        #form-group
+                            label(for='price') Price:
+                            input.form-control(name='price')
+
+                        #form-group
+                            label(for='location') Location:
+                            input.form-control(name='location')
+                        #form-group
+                            label(for='desc') Description:
+                            textarea.form-control(name='desc')
+                        #form-group
+                            label(for='photo') Photo:
+                            input.form-control(name='photo' type='file')
+
+                        input.btn.btn-primary.submit-btn-extra(type='submit', value='Submit')
+
+                br 
+                br
+                p Rooms Created:
+
+                .room-listing-container
+                    each room, i in rooms 
+                        if room.adminsemail == user.email    
+                        
+                            .room-listing-container
+                                .room-listing
+                                    .room-img
+                                        a(href="/room/"+room._id)
+                                            img(src=`/img/${room.img}` alt='')
+                                    p.room-listing-name ENTIRE APARTMENT · #{room.location}
+                                    a(href="/room/"+room._id  class='room-listing-a')
+                                        h3=room.title
+                                    p.price $#{room.price} CAD/night 
+                                    p.review-star
+                                        span.review-num  4.9(236) · Superhost
+
+            
+            
+        
+        else if !user 
+            p restricted page
+
+
+                

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    main.login-main
+        .form-signup-container
+            form(action='/login' method='POST')
+                .signup-form-div.singup-password
+                    h4 Login below
+                    p
+                    | Don't have an account? 
+                    span
+                        a.signup-login(href='/signup')  Signup Here
+                .signup-form-div
+                    label(for='email')
+                    input#signup-email(type='email' placeholder='Email adress' name='email' required='' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$')
+                .signup-form-div.singup-password
+                    label(for='password')
+                    input#signup-password(type='password' placeholder='Create a Password' name='password' required='')
+                .signup-form-div
+                    input.signup-submit-btn.book-submit-btn(type='submit' value='Sign up')

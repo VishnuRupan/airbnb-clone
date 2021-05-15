@@ -1,0 +1,78 @@
+extends layout
+
+block content
+    section.hero
+        h2  Travel Beyond Your Limits. 
+        h3  Book unique places to stay at today! 
+        .booking-form-container
+            form.book-form
+                .where-to.form-label-1
+                    label(for='where') Where
+                    input#where(list='canada-cities' type='search' placeholder='Where do you want to go?' name='where')
+                    datalist#canada-cities
+                        option(value='Vancouver')
+                        option(value='Toronto')
+                        option(value='Montreal')
+                        option(value='Ottawa')
+                        option(value='Edmonton')
+                .div-check-inout
+                    .check-in-div.form-label-1
+                        label(for='from') Check-In
+                        input(type='date' name='from')
+                    .check-out-div.form-label-1
+                        label(for='to') Check-Out
+                        input(type='date' name='to')
+                .guests-div.form-label-1
+                    label(for='guests')  Guests
+                    select#guests(name='guests')
+                        option(value='1') 1 guest
+                        option(value='2') 2 guests
+                        option(value='3') 3 guests
+                        option(value='4') 4 guests
+                        option(value='5') 5 guests
+
+                input.book-submit-btn(type='submit' value='Search')
+
+    section#benefit.benefits
+        header.benefits-head
+            h2  The Best Offers Today 
+            h3 We cover everything so all you have to do is show up
+        .cards
+            .card
+                .card-icon
+                img(src='./img/beach-resort.jpg' alt='beach resort')
+                h4
+                    | Beach Resort 
+                    span.promotional-span  50% OFF
+                p  Beautiful Beaches in Hawaii Resorts
+
+            .card
+                .card-icon
+                img(src='./img/hotel-promo.jpg' alt='LA Hotel')
+                h4
+                    | Luxry Hotel 
+                    span.promotional-span  40% OFF
+                p  Hotel located near populated areas 
+
+            .card
+                .card-icon
+                img(src='./img/winter-cottage.jpg' alt='cottage')
+                h4
+                    | Winter Cabins 
+                    span.promotional-span  80% OFF
+                p  Get warm and cozy in cottage village 
+    
+    section.informational
+        .info-container
+            .info-section-1
+                .info-section-header
+                    h2 Why AirB&B?
+                .video-info
+                    h3  Explore New Worlds
+                    .video-container
+                        iframe.video-frame(src='https://www.youtube.com/embed/-TYnAWJ-03Q' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+            .info-section-2
+                .info-card-display
+                    img(src='./img/friends-doing-stuff.jpg' alt='LA Hotel')
+                .description-on-info
+                    p AirB&B has been the goto place for finding the perfect resting area during your trips and vacations. Find your cozy place at your destinations from hosts that will provide your with an exceptional experience

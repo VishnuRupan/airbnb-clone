@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    .login-main
+        .form-signup-container
+            form(action='/signup' method='POST')
+                .signup-form-div.singup-password
+                    h4 Sign Up below
+                    p Already have an account? 
+                        span
+                            a.signup-login(href='/login')  Login Here
+                .signup-form-div
+                    label(for='email')
+                    input#signup-email(type='email' placeholder='Email adress' name='email' required='' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$')
+                .signup-form-div
+                    label(for='firstname')
+                    input#signup-first-name(type='text' placeholder='First name' name='firstname' )
+                .signup-form-div
+                    label(for='lastname')
+                    input#signup-last-name(type='text' placeholder='Last name' name='lastname' )
+                .signup-form-div.singup-password
+                    label(for='password')
+                    input#signup-password(type='password' placeholder='Create a Password' name='password')
+                .signup-form-div.birthday
+                    label(for='birthday')  Birthday
+                    p.signup-birth-tag
+                        | To sign up, you need to be at least 18. Other people who use Airbnb won't see your birthday.
+                    input#signup-birthday(type='date' name='birthday')
+                    p.signup-promo
+                        | We'l send you marketing promotions, speical offers, inspirations, and policy updates via email
+                
+                .signup-form-div.singup-password  
+                    span  
+                        label(for="checked") Do You Want To Be Admin?
+                        input(type="checkbox", name="checked", value="true" class='admin-checkbox')
+
+                .signup-form-div
+                    input.signup-submit-btn.book-submit-btn(type='submit' value='Sign up')

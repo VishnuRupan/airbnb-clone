@@ -1,0 +1,124 @@
+extends layout
+
+block content
+    a(href='/rooms' class='room-listing-a check-out-other-rooms' )
+        p Check out other rooms
+    .room-listing-container
+        .room-listing.changed-room-listing
+                .room-img
+                    img(src=`/img/${room.img}` alt='')
+                p.room-listing-name ENTIRE APARTMENT · #{room.location}
+                h3=room.title
+                p.price $#{room.price} CAD/night 
+                p.review-star
+                    span.review-num  4.9(236) · Superhost
+                p=room.desc
+    
+        form(method='POST', action='/rooms/book' class='admin-update-form ')
+
+                    if user
+                        p Book Your Room:
+                        #form-group
+                            label(for='title' class='label-for-book-host') Room Host: #{room.adminsemail} 
+                            input.form-control(name='adminsemail', type="hidden" value=user.email)
+                        #form-group
+                            label(for='firstname')
+                            input.form-control(name='firstname', type="hidden" value=user.firstname)
+                        #form-group
+                            label(for='lastname') 
+                            input.form-control(name='lastname', type="hidden" value=user.lastname)
+                        #form-group
+                            label(for='price' id='roomprice')
+                            input.form-control(name='price' type="hidden" value=room.price )
+                        #form-group
+                            label(for='title')
+                            input.form-control(name='title' type="hidden" value=room.title )
+
+                    #form-group
+                        label(for='startdate') Start Date:
+                        input.form-control(name='startdate' type='date' id='startdate')
+
+                    #form-group
+                        label(for='enddate') End Date:
+                        input.form-control(name='enddate' type='date' id='enddate')
+
+                    #form-group
+                        button.btn.btn-primary.new-calc-btn(type='button' onClick='someting()') Calculate Price
+                        p(id='updatedPrice')
+
+                    if user 
+                        if user.email == room.adminsemail   
+                            p(class='alert alert-danger') host cannot book own room.
+                        else 
+                            input.btn.btn-primary(type='submit', value='Book Room')
+                    else 
+                        p(class='alert alert-danger') must be a user to book a room.
+
+
+        if user
+            if user.email == room.adminsemail   
+                form(method='POST', action='/rooms/edit/'+room._id class='admin-update-form')
+                    p Update This Room:
+                    #form-group
+                        label(for='title') Title:
+                        input.form-control(name='title', type='text')
+                    #form-group
+                        label(for='price') Price:
+                        input.form-control(name='price', type='text')
+                    #form-group
+                        label(for='location') Location:
+                        input.form-control(name='location', type='text')
+                    #form-group
+                        label(for='desc') Description:
+                        textarea.form-control(name='desc', type='text')
+
+                    input.btn.btn-primary.new-calc-btn(type='submit', value='Submit')
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    script. 
+
+       function someting() {
+
+           var pricer = document.querySelector('#updatedPrice');
+           var roomprice = parseFloat(#{room.price});
+
+
+           var startdate = Date.parse(document.getElementById('startdate').value);
+           var enddate = Date.parse(document.getElementById('enddate').value);
+
+           var calculated = Math.floor((enddate - startdate) / (1000*60*60*24));
+
+           if ( calculated < 0) {
+               pricer.textContent = 'start date must be before end date';
+               pricer.classList.add("alert-danger");
+               pricer.classList.add("alert");
+
+           } else if (!calculated) {
+               pricer.textContent = 'no dates selected';
+               pricer.classList.add("alert-danger");
+               pricer.classList.add("alert");
+           }
+           
+           else {
+               pricer.classList.remove('alert-danger');
+               pricer.classList.add("alert-success");
+               pricer.classList.add("alert");
+               pricer.textContent = `The price for ${calculated} days is $${(calculated * roomprice)} CAD `;
+           }
+
+       }         
+

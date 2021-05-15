@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title>Air BnB</title>
+</head>
+<body>
+
+    <div class="master-container">
+
+        
+    <header class="main-head">
+        <nav>
+            <h1 class="logo"> <a href="./index.html">airbnb</a> </h1>
+            <ul>
+                <li> <a href="/"> Home </a></li>
+                <li> <a href="/rooms"> Rooms </a></li>
+                <li> <a href="#contact"> Contact </a></li>
+                <li> <a href="/login"> Login </a></li>
+                <li> <a href="/signup" class="signup"> Sign-Up </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h2> Travel Beyond Limits. </h2>
+            <h3> Book unique places to stay at today! </h3>
+    
+            <div class="booking-form-container">
+                <form class="book-form">
+                    
+                    <div class="where-to form-label-1">
+                        <label for="where">Where</label>
+                        <input list="canada-cities" type="search" placeholder="Where do you want to go?" name="where" id="where"/>
+
+                        <datalist id="canada-cities">
+                            <option value="Vancouver">
+                            <option value="Toronto">
+                            <option value="Montreal">
+                            <option value="Ottawa">
+                            <option value="Edmonton">
+                        </datalist>
+                    </div>
+
+
+                    <div class="div-check-inout">
+                        <div class="check-in-div form-label-1">
+                            <label for="from">Check-In</label>
+                            <input type="date" name="from" />
+                        </div>
+                        
+                        <div class="check-out-div form-label-1">
+                            <label for="to">Check-Out</label>
+                            <input type="date" name="to" />
+                        </div>
+                    </div>
+
+
+                    <div class="guests-div form-label-1">
+                        <label for="guests"> Guests</label>
+                        <select name="guests" id="guests">
+                          <option value="1">1 guest</option>
+                          <option value="2">2 guests</option>
+                          <option value="3">3 guests</option>
+                          <option value="4">4 guests</option>
+                          <option value="5">5 guests</option>
+                        </select>
+                    </div>
+                    
+                    
+                    <input class="book-submit-btn" type="submit" value="Search" />
+                  
+                  </form>
+            </div>
+            
+        </section>
+
+
+        <section class="benefits" id="benefit">
+            <header class="benefits-head">
+                <h2> The Best Offers Today </h2>
+                <h3> We cover everything 
+                    <br> so all you have to do is show up
+                </h3>
+            </header>
+            
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./img/beach-resort.jpg" alt="beach resort">
+                    </div>
+                    <h4> Beach Resort <span class="promotional-span"> 50% OFF</span></h4>
+                    <p> Beautiful Beaches in Hawaii Resorts</p>
+                </div>
+    
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./img/hotel-promo.jpg" alt="LA Hotel">
+                    </div>
+                    <h4> Luxry Hotel <span class="promotional-span"> 40% OFF</span></h4>
+                    <p> Hotel located near populated areas </p>
+                </div>
+    
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./img/winter-cottage.jpg" alt="cottage">
+                    </div>
+                    <h4> Winter Cabins <span class="promotional-span"> 80% OFF</span></h4>
+                    <p> Get warm and cozy in cottage village </p>
+                </div>
+            </div>
+    
+        </section>
+
+       <section class="informational">
+
+        <div class="info-container">
+
+            <div class="info-section-1">
+                <div class="info-section-header">
+                    <h2>Why AirB&B?</h2>
+                </div>
+    
+                <div class="video-info">
+                    <h3> Explore New Worlds</h3>
+                    <div class="video-container">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/-TYnAWJ-03Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </iframe>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="info-section-2">
+
+                <div class="info-card-display">
+                    <img src="./img/friends-doing-stuff.jpg" alt="LA Hotel">
+                </div>
+                <div class="description-on-info">
+                    <p> AirB&B has been the goto place for finding the perfect resting area during your trips and vacations.
+                    Find your cozy place at your destinations from hosts that will provide your with an exceptional experience </p>
+                </div>
+            </div>
+
+        </div>
+       </section>
+
+
+    </main>
+    
+    <footer>
+        <div class="footer-wrapper">
+            <h5> © 2020 Airbnb, Inc.  All rights reserved   ·   <a>Privacy·Terms</a>   ·   <a>Site Map</a>     </h5> 
+            <ul>
+                <li class="footer-li"><a href=""><img src="./icons/twitter.svg" alt=""></a></li>
+                <li class="footer-li"><a href=""><img src="./icons/youtube.svg" alt=""></a></li>
+                <li class="footer-li"><a href=""><img src="./icons/instagram.svg" alt=""></a></li>
+ 
+            </ul>
+        </div>
+    </footer>
+
+    </div>
+
+
+</body>
+</html>

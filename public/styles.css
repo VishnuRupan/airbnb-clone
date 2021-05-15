@@ -1,0 +1,605 @@
+/* GLOBAL STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+  list-style: none;
+}
+
+a,
+li,
+a:hover,
+li:hover {
+  text-decoration: none;
+  list-style: none;
+}
+
+.the-thing {
+  color: white;
+}
+
+.the-thing:hover {
+  color: white;
+}
+
+a:hover,
+li:hover {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+button {
+  padding: 1.5rem 4rem;
+  background: #58d158;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.master-container {
+  overflow-x: hidden;
+}
+
+/* Nav Section With Hero */
+
+.main-head {
+  background: #131c27;
+  color: white;
+  /* creating a sticked nav bar during scroll */
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+  /* this whole thing */
+}
+
+nav {
+  padding: 2rem;
+  min-height: 10vh;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  align-items: center; /* to align everything within the nav box because its a flex*/
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex: 3 1 40rem;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  flex: 1 1 40rem;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+}
+.back-tohome {
+  font-size: 2rem;
+  color: black;
+}
+.signup {
+  border: solid white 2px;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+}
+
+.signup:hover {
+  color: #131c27;
+  background: white;
+  font-weight: 500;
+}
+
+.room-listing-a {
+  color: black;
+}
+
+/* Main */
+/* to fit a background image within the first page */
+.hero {
+  background: linear-gradient(rgba(112, 112, 112, 0.6), transparent),
+    url(./img/home-page-intro.jpg);
+  min-height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h3 {
+  padding: 4rem;
+}
+
+/* Homepage Form */
+
+.book-form {
+  width: 100%;
+  height: 100%;
+}
+
+.booking-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-check-inout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-label-1 {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.form-label-1 label {
+  text-align: start;
+  font-size: medium;
+}
+
+.form-label-1 input,
+select {
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.book-submit-btn {
+  margin-top: 1rem;
+  padding: 1.5rem 3rem;
+  background: #131c27;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.book-submit-btn:hover {
+  color: #131c27;
+  font-weight: bold;
+  background: white;
+}
+
+.book-submit-btn:active {
+  background: #131c27;
+  color: white;
+}
+
+/* Homepage Form END */
+
+/* PROMOTIONAL */
+
+.benefits-head {
+  background: #0e1318;
+  padding: 2.5rem;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.benefits-head h3 {
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.cards {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  min-height: 65vh;
+  align-items: center; /* deafult flex is stretch */
+  flex-wrap: wrap;
+}
+
+.card {
+  text-align: center;
+  flex: 1 1 20rem;
+  min-height: 40vh;
+  margin: 2rem 5rem;
+  /* same box shadow applied twice slightly different */
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+.cards img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card h4,
+.card p {
+  padding: 1rem;
+}
+
+.card-icon {
+  background: rgb(32, 59, 109);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.promotional-span {
+  font-size: small;
+  color: red;
+}
+
+/* PROMOTIONAL END */
+
+/* INFORMATIONAL END */
+
+.info-container {
+  background: black;
+  min-height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.info-section-1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 40rem;
+}
+
+.info-section-1 div {
+  padding: 3rem;
+}
+
+.info-section-2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 40rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.info-card-display {
+  height: 35rem;
+  width: 50rem;
+  padding-bottom: 5rem;
+}
+
+.info-card-display img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.description-on-info {
+  padding-top: 3rem;
+  padding: 5rem;
+}
+
+.video-frame {
+  width: 100%;
+  height: 30rem;
+}
+
+/* ROOM LISTING */
+.room-listing-header {
+  min-height: 15vh;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.room-listing-header p {
+  font-size: small;
+}
+
+.room-listing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  padding: 2rem 0rem;
+  width: 80%;
+  margin: auto;
+  row-gap: 7rem;
+  column-gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.room-listing {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.room-img {
+  height: 30rem;
+  width: 100%;
+}
+
+.room-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.room-listing p,
+h3 {
+  padding-left: 1rem;
+}
+
+.review-star {
+  padding-bottom: 1.5rem;
+  font-size: small;
+}
+
+.room-listing-name {
+  padding-top: 1rem;
+  font-size: small;
+}
+
+/* SIGNUP FORM */
+
+.form-signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px black solid;
+  padding: 2rem 0.5rem;
+}
+
+.form-signup-container input {
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.signup-form-div {
+  display: flex;
+  padding: 1rem;
+}
+
+.birthday {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form-div p {
+  font-size: 1.2rem;
+  color: grey;
+}
+
+.singup-password {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-login {
+  color: rgb(37, 117, 255);
+  font-weight: bold;
+}
+
+.login-main {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.label-for-book-host {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.check-out-other-rooms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.changed-room-listing {
+  box-shadow: none;
+}
+
+.admin-update-form {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  height: 40rem;
+}
+
+.rooms-lookup-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.alert {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.form-label-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.dashboard-intro-message {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.new-admin-update {
+  min-height: 46rem;
+  margin-bottom: 1rem;
+  padding: 2rem 3rem;
+}
+
+.submit-btn-extra {
+  margin-top: 2rem;
+  margin-left: 8rem;
+  padding: 0.3rem 2rem;
+  font-weight: bold;
+}
+.new-calc-btn {
+  margin-top: 2rem;
+  padding: 0.3rem 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+/* SIGNUP FORM END*/
+
+/* FOOTER */
+
+footer {
+  color: white;
+  background: rgba(19, 28, 39, 1);
+}
+
+.footer-wrapper {
+  display: flex;
+  padding: 1.5rem;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  min-height: 10vh;
+  flex-wrap: wrap;
+}
+
+footer h5 {
+  flex: 1 1 20rem; /* this is how you make it grid like behaviour */
+  font-weight: lighter;
+  font-size: small;
+}
+
+footer ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.footer-li {
+  padding-left: 10rem;
+}
+
+/* Media Queries */
+
+/* 949 */
+@media screen and (max-width: 949px) {
+  nav {
+    text-align: center;
+  }
+
+  .logo {
+    padding: 0.5rem;
+  }
+
+  nav ul {
+    padding: 0.5rem;
+  }
+
+  footer h5 {
+    flex: 1 1 40rem; /* this is how you make it grid like behaviour */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  html {
+    font-size: 45%;
+  }
+
+  .form-wrapper {
+    width: 90%;
+  }
+  .book-form {
+    width: 80%;
+  }
+
+  .booking-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .book-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,48 @@
+extends layout
+
+block content
+
+    section.room-listing-header
+        h3 Check out these amazing places to stay at today! 
+        p
+            | Your trip is coming up soon. Use the Instant Book filter to check out places that you can book right now.
+
+
+    .booking-form-container.rooms-lookup-form
+        form(class='book-form' action="/lookup" method="POST")
+            .where-to.form-label-1.form-label-2
+                label(for='where') Search for a location
+                input#where(list='canada-cities' type='search' placeholder='Where do you want to go?' name='where')
+                datalist#canada-cities
+                    option(value='Vancouver')
+                    option(value='Toronto')
+                    option(value='Montreal')
+                    option(value='Ottawa')
+                    option(value='All')
+            input.book-submit-btn(type='submit' value='Search')
+
+
+    .room-listing-container
+        each room, i in rooms
+            if room.location == locations
+                .room-listing
+                    .room-img
+                        a(href="/room/"+room._id)
+                            img(src=`/img/${room.img}` alt='')
+                    p.room-listing-name ENTIRE APARTMENT · #{room.location}
+                    a(href="/room/"+room._id  class='room-listing-a')
+                        h3=room.title
+                    p.price $#{room.price} CAD/night 
+                    p.review-star
+                        span.review-num  4.9(236) · Superhost 
+            else if locations == "All"
+                .room-listing
+                    .room-img
+                        a(href="/room/"+room._id)
+                            img(src=`/img/${room.img}` alt='')
+                    p.room-listing-name ENTIRE APARTMENT · TORONTO
+                    a(href="/room/"+room._id class='room-listing-a')
+                        h3=room.title
+                    p.price $#{room.price} CAD/night 
+                    p.review-star
+                        span.review-num  4.9(236) · Superhost
